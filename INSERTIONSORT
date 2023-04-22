@@ -1,0 +1,31 @@
+void insertionSort(ListaAlunos* lista) {
+    Aluno* atual;
+    Aluno* proximo;
+    int matricula;
+    float media;
+
+    if (lista == NULL || lista->inicio == NULL) {
+        return;
+    }
+
+    // começa do segundo elemento da lista
+    atual = lista->inicio->prox;
+
+    while (atual != NULL) {
+        matricula = atual->matricula;
+        media = atual->media;
+        proximo = atual->prox;
+
+        // encontra a posição correta para o elemento atual na lista ordenada
+        while (proximo != NULL && proximo->matricula < matricula) {
+            atual->matricula = proximo->matricula;
+            atual->media = proximo->media;
+            atual = proximo;
+            proximo = proximo->prox;
+        }
+
+        atual->matricula = matricula;
+        atual->media = media;
+        atual = proximo;
+    }
+}
