@@ -1,0 +1,35 @@
+void bubbleSort(ListaAlunos* lista) {
+    Aluno* atual;
+    Aluno* proximo;
+    int matricula;
+    float media;
+    int trocado;
+
+    if (lista == NULL || lista->inicio == NULL) {
+        return;
+    }
+
+    do {
+        trocado = 0;
+        atual = lista->inicio;
+        proximo = atual->prox;
+
+        while (proximo != NULL) {
+            // compara as matrículas dos alunos atuais e próximos (CASO NECESSARIO SUBSTITUIR PARA ORDENAR POR OUTRA COISA)
+            if (atual->matricula > proximo->matricula) {
+                // realiza a troca de valores entre os alunos
+                matricula = atual->matricula;
+                media = atual->media;
+                atual->matricula = proximo->matricula;
+                atual->media = proximo->media;
+                proximo->matricula = matricula;
+                proximo->media = media;
+
+                trocado = 1;
+            }
+
+            atual = proximo;
+            proximo = proximo->prox;
+        }
+    } while (trocado);
+}
