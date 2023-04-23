@@ -29,3 +29,25 @@ void insertionSort(ListaAlunos* lista) {
         atual = proximo;
     }
 }
+
+
+
+
+-------------------------------------------------------------------------
+void insertionSort(ListaAlunos* lista) {
+    Aluno* i, *j, *aux;
+    
+    for (i = lista->inicio->prox; i != NULL; i = i->prox) {
+        aux = i;
+        
+        for (j = i->ant; j != NULL && aux->matricula < j->matricula; j = j->ant) {
+            j->prox->matricula = j->matricula;
+        }
+        
+        if (j == NULL) {
+            lista->inicio->matricula = aux->matricula;
+        } else {
+            j->prox->matricula = aux->matricula;
+        }
+    }
+}
