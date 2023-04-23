@@ -1,3 +1,5 @@
+(MAIS EFIC)
+
 void insertionSort(ListaAlunos* lista) {
     Aluno* atual;
     Aluno* proximo;
