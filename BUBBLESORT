@@ -33,3 +33,40 @@ void bubbleSort(ListaAlunos* lista) {
         }
     } while (trocado);
 }
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------
+void bubbleSort(ListaAlunos* lista) {
+    Aluno *i, *j, *aux;
+    int trocou = 1;
+    
+    while (trocou) {
+        trocou = 0;
+        i = lista->inicio->prox;
+        
+        while (i != NULL && i->prox != NULL) {
+            j = i->prox;
+            
+            if (i->matricula > j->matricula) {
+                // troca os elementos i e j
+                aux = i;
+                i->ant->prox = j;
+                j->prox->ant = i;
+                i->prox = j->prox;
+                j->ant = i->ant;
+                i->ant = j;
+                j->prox = aux;
+                trocou = 1;
+            } else {
+                i = i->prox;
+            }
+        }
+    }
+}
