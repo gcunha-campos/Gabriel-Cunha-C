@@ -43,6 +43,9 @@ void bubbleSort(ListaAlunos* lista) {
 
 
 ------------------------------------------------------------------------
+(MAIS EFIC)
+
+
 void bubbleSort(ListaAlunos* lista) {
     Aluno *i, *j, *aux;
     int trocou = 1;
