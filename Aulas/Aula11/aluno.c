@@ -13,6 +13,7 @@ Aluno* criaAluno(int mat, char* nome, float n1, float n2, float n3) {
         al->n3 = n3;
     }
     return al;
+    
 }
 
 void liberaAluno(Aluno* al) {
